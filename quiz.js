@@ -353,11 +353,30 @@ col_fun <- colorRamp2(
         const resultsContainer = document.getElementById('results-container');
         resultsContainer.style.display = 'block';
         
+        // 生成答题详情
+        const questionResults = this.questions.map((question, index) => {
+            const selectedAnswer = document.querySelector(`.question-container[data-question-index="${index}"] .option-button.selected`);
+            const isCorrect = selectedAnswer && parseInt(selectedAnswer.dataset.index) === question.correct;
+            return `
+                <div class="question-result ${isCorrect ? 'correct' : 'incorrect'}">
+                    <span class="question-number">题目 ${index + 1}</span>
+                    <span class="result-icon">${isCorrect ? '✓' : '✗'}</span>
+                    <span class="question-category">${question.category}</span>
+                </div>
+            `;
+        }).join('');
+
         resultsContainer.innerHTML = `
             <h2>测验结果</h2>
             <div class="score-display">[${this.nickname}]得分: ${this.score}/${this.questions.length} (${percentage.toFixed(1)}%)</div>
             <div class="feedback-container">
                 ${this.generateFeedback(percentage)}
+            </div>
+            <div class="questions-summary">
+                <h3>答题详情</h3>
+                <div class="questions-grid">
+                    ${questionResults}
+                </div>
             </div>
             <div id="screenshot-reminder" class="reminder-box">
                 <h3>🎉 恭喜完成测验！</h3>

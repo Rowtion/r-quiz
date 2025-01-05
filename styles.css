@@ -211,3 +211,65 @@ body {
     color: #28a745;
     margin-right: 8px;
 }
+
+/* 答题详情样式 */
+.questions-summary {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.questions-summary h3 {
+    color: #495057;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.question-result {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.question-result.correct {
+    border-left: 4px solid #28a745;
+}
+
+.question-result.incorrect {
+    border-left: 4px solid #dc3545;
+}
+
+.question-number {
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.result-icon {
+    margin: 0 0.5rem;
+    font-size: 1.2em;
+}
+
+.question-result.correct .result-icon {
+    color: #28a745;
+}
+
+.question-result.incorrect .result-icon {
+    color: #dc3545;
+}
+
+.question-category {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-left: auto;
+}
