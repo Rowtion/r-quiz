@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R讲席营第一周周末测验</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .quiz-header {
+            margin-bottom: 20px;
+        }
+        .quiz-header h1 {
+            margin-bottom: 10px;
+        }
+        .quiz-section {
+            margin-bottom: 20px;
+        }
+        .question-container {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .submit-button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .results-container {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quiz-header">
+            <h1>R代码讲席营第一周周末测验</h1>
+            <p>本测验为包含D1-D6课程内容的综合测试。</p>
+        </div>
+
+        <div class="quiz-section">
+            <div id="question-container">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+
+            <div class="button-container">
+                <button id="submit-button" class="submit-button">提交答案</button>
+            </div>
+        </div>
+
+        <div id="results-container" class="results-container" style="display: none;">
+            <h2>测验结果</h2>
+            <div id="score"></div>
+            <div id="feedback"></div>
+            <div id="screenshot-reminder" class="reminder-box">
+                <h3>🎉 恭喜完成测验！</h3>
+                <p>请记得完成以下步骤：</p>
+                <ol>
+                    <li>📸 截图保存您的测验成绩</li>
+                    <li>📝 将截图发送给助教打卡</li>
+                </ol>
+                <div class="reminder-note">
+                    <p>💡 提示：截图时请确保包含：</p>
+                    <ul>
+                        <li>✓ 分数</li>
+                        <li>✓ 完成时间</li>
+                        <li>✓ 答题反馈</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
